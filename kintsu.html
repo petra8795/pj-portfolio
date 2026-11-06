@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kintsu Website — Petra Jakljevič</title>
+<meta name="description" content="Case study: brand identity and website design for Kintsu, a DAAS agency — clean, modern and minimalistic with pastel colors." />
+<link rel="stylesheet" href="fonts.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html">Petra Jakljevič</a>
+      <nav class="nav__links" id="menu">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#recommendations">Recommendations</a>
+        <a class="nav__cta" href="https://calendly.com/jakljevicpetra/30min" target="_blank" rel="noopener">Let's talk</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ CASE HERO ============ -->
+    <section class="hero hero--case container">
+      <a class="backlink reveal" href="index.html#work"><span aria-hidden="true">←</span> All work</a>
+      <span class="eyebrow reveal">Case study — Web design</span>
+      <h1 class="hero__title reveal">Kintsu website<span class="accent">.</span></h1>
+      <p class="hero__lead reveal">I designed the brand identity and website for Kintsu, a DAAS agency. The client wanted a clean, modern website that provides a sense of trust and professionalism, with all the essential details potential subscribers might need. I kept the overall design minimalistic and incorporated pastel colors to elevate the brand and create a fresh, inviting look.</p>
+
+      <dl class="case-meta reveal">
+        <div><dt>Date</dt><dd>May 2024</dd></div>
+        <div><dt>Client</dt><dd>Kintsu</dd></div>
+        <div><dt>URL</dt><dd><a href="https://www.kintsu.studio" target="_blank" rel="noopener">www.kintsu.studio</a></dd></div>
+      </dl>
+    </section>
+
+    <figure class="case-hero-media container reveal">
+      <img src="images/kintsu-cover.webp" alt="Kintsu website overview" />
+    </figure>
+
+    <!-- ============ INSPIRATION ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">01 — Inspiration</span>
+          <h2 class="section__title">Where it started</h2>
+        </div>
+        <div class="case-gallery">
+          <figure class="reveal"><img src="images/kintsu-inspiration.webp" alt="Kintsu moodboard and inspiration" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL DESIGN ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">02 — Final design</span>
+          <h2 class="section__title">Where it landed</h2>
+        </div>
+        <div class="case-gallery">
+          <figure class="reveal"><img src="images/kintsu-final-1.webp" alt="Kintsu final website design" loading="lazy" /></figure>
+          <figure class="reveal"><img src="images/kintsu-final-2.webp" alt="Kintsu final website design" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OTHER PROJECTS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">03 — More work</span>
+          <h2 class="section__title">Other projects</h2>
+        </div>
+
+        <div class="work">
+          <a class="card reveal" href="waiting-room.html">
+            <div class="card__media"><img src="images/waiting-room-cover.png" alt="Waiting room redesign project" loading="lazy" /></div>
+            <div class="card__row">
+              <div><h3 class="card__title">Waiting room</h3><p class="card__tag">Product redesign</p></div>
+              <span class="card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="card reveal" href="correlate.html">
+            <div class="card__media"><img src="images/correlate-cover.webp" alt="Correlate project" loading="lazy" /></div>
+            <div class="card__row">
+              <div><h3 class="card__title">Correlate</h3><p class="card__tag">CX · UI design</p></div>
+              <span class="card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="container contact__inner reveal">
+        <span class="eyebrow eyebrow--light">Contact</span>
+        <h2 class="contact__title">Let's bring your<br />vision to life<span class="accent">.</span></h2>
+        <p class="contact__lead">I'm here to help you create something exceptional — together.</p>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="https://calendly.com/jakljevicpetra/30min" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span></a>
+          <a class="btn btn--light" href="https://x.com" target="_blank" rel="noopener">Find me on X</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Petra Jakljevič</span>
+      <span class="footer__note">Designed &amp; built in VS Code</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
