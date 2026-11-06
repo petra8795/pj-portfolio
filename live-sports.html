@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Live sports — Petra Jakljevič</title>
+<meta name="description" content="Case study: three projects from a year of designing and building live sports apps: bet tracking, halftime and basketball." />
+<link rel="stylesheet" href="fonts.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html">Petra Jakljevič</a>
+      <nav class="nav__links" id="menu">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#how">How I work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#recommendations">Recommendations</a>
+        <a class="nav__cta" href="https://calendly.com/jakljevicpetra/30min" target="_blank" rel="noopener">Let's talk</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero--case container">
+      <a class="backlink reveal" href="index.html#work"><span aria-hidden="true">←</span> All work</a>
+      <span class="eyebrow reveal">Case study — Live sports · 2025–2026</span>
+      <h1 class="hero__title reveal">Designing for <em>live</em> sports<span class="accent">.</span></h1>
+      <p class="hero__lead reveal">People follow matches as animated games on their phones. For the past year I've designed what they see, and built a lot of it myself. Here are three projects, from a shipped feature to an early idea.</p>
+      <dl class="case-meta reveal">
+        <div><dt>Company</dt><dd>Sportradar</dd></div>
+        <div><dt>My part</dt><dd>Design + build</dd></div>
+        <div><dt>Reading time</dt><dd>2 min skim · 8 min full</dd></div>
+      </dl>
+      <p class="case-note reveal">Some details are left out because this is internal work. Team and player names in screenshots are test data.</p>
+    </section>
+
+    <!-- The 2-minute version: one line per project, each a jump link -->
+    <section class="container skim reveal" aria-label="Summary">
+      <span class="skim__label">In 30 seconds</span>
+      <ol class="skim__list">
+        <li><a href="#bet"><span class="skim__n">01</span><span class="skim__t">Bet tracking</span><span class="skim__s">Shipped</span><span class="skim__d">Showing people how their bets are doing, right on top of the live game. Now part of our design system.</span></a></li>
+        <li><a href="#halftime"><span class="skim__n">02</span><span class="skim__t">Halftime with odds</span><span class="skim__s">Proposal</span><span class="skim__d">Turning the 15-minute break into a quick recap and a ready-made bet. Nine ideas down to one.</span></a></li>
+        <li><a href="#basketball"><span class="skim__n">03</span><span class="skim__t">Basketball that feels like basketball</span><span class="skim__s">Shipped</span><span class="skim__d">Fixing a basketball game that moved like football, and writing down how it should work.</span></a></li>
+      </ol>
+      <p class="skim__hint">Each chapter starts with the short version. Open "See how it got there" for the full process.</p>
+    </section>
+
+    <!-- chapter nav: sticks while you read, highlights where you are -->
+    <nav class="chapnav" aria-label="Chapters">
+      <div class="container chapnav__inner">
+        <a href="#bet" data-chap="bet"><span>01</span> Bet tracking</a>
+        <a href="#halftime" data-chap="halftime"><span>02</span> Halftime</a>
+        <a href="#basketball" data-chap="basketball"><span>03</span> Basketball</a>
+        <a href="#takeaways" data-chap="takeaways"><span>→</span> Takeaways</a>
+      </div>
+    </nav>
+
+    <section class="chapter section" id="bet">
+      <div class="container">
+        <header class="chapter__head reveal">
+          <span class="eyebrow">Chapter 1 — Shipped</span>
+          <h2 class="section__title">Bet tracking: from loud to <em>calm</em></h2>
+          <p class="chapter__line">You have three bets on a game. The match view showed the game, but not your bets. I designed little chips that fill up as each bet gets closer to winning, and built them into the product.</p>
+        </header>
+        <figure class="case-hero-media case-hero-media--cover chapter__cover reveal">
+          <div class="cover cover--bet" aria-hidden="true">
+            <div class="cv-glow"></div>
+            <div class="cv-stage"><div class="cv-phone cv-phone--land"><img src="images/bt-latest.jpg" alt="" loading="lazy" /></div></div>
+            <div class="cv-chip cv-chip--a"><span class="cv-ring" style="--p:50"></span><span class="cv-chip__t"><b>Halfway there</b></span><span class="cv-score"><b>10</b>/20</span></div>
+          </div>
+        </figure>
+        <div class="reveal">
+          <div class="facts">
+            <div class="fact"><span>The problem</span><p>Your bets lived somewhere else. To check them you had to leave the game.</p></div>
+            <div class="fact"><span>What I made</span><p>One chip per bet along the bottom, with a ring that fills up. Tap it for the details and cash-out.</p></div>
+            <div class="fact"><span>The result</span><p>Live in our demos for basketball and football, and now part of our design system so every product can use it.</p></div>
+          </div>
+        </div>
+        <details class="fold reveal">
+          <summary><span class="fold__label">See how it got there</span><span class="fold__meta">8 steps · about 3 min</span></summary>
+          <div class="fold__body">
+            <ol class="process">
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">01</span><h3>The first version worked, but shouted</h3><p>Every bet was a solid red or green bar. Three losing bets made a red wall that told you nothing.</p></div>
+                <figure class="process__shot"><img src="images/btp-1-first.jpg" alt="First version with solid coloured bars" loading="lazy" /></figure>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">02</span><h3>Then I tried a ticker</h3><p>Once I saw it live, everything was orange and fighting for attention. New rule: if nothing is changing, stay quiet.</p></div>
+                <figure class="process__shot"><img src="images/btp-2-ticker.jpg" alt="Ticker version with orange lines" loading="lazy" /></figure>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">03</span><h3>Summer: chips with little rings</h3><p>Calm by default, clear when something happens. Tap a chip for the stake, the odds and what you'd win.</p></div>
+                <figure class="process__shot"><img src="images/btp-3-chips.jpg" alt="Chips with rings and an open bet card" loading="lazy" /></figure>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">04</span><h3>Cashing out, without the drama</h3><p>The big warning box grew the card at the exact moment you had to decide. Two simple buttons replaced it.</p></div>
+                <div class="process__pair">
+                  <figure><img src="images/btp-4-confirm-before.jpg" alt="Old cash-out step" loading="lazy" /><figcaption class="is-before">Before</figcaption></figure>
+                  <figure><img src="images/btp-5-confirm-after.jpg" alt="New cash-out step" loading="lazy" /><figcaption class="is-after">After</figcaption></figure>
+                </div>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">05</span><h3>Autumn: one colour rule for every bet</h3><p>I redesigned the cards. Green means ahead or won, grey means still open, red only when a bet is lost. A red bar "35% full" didn't mean anything, so it went.</p></div>
+                <figure class="process__shot"><img src="images/btp-7-colour-rule.jpg" alt="Before and after: a red half-filled bar becomes a calm bar growing from the centre" loading="lazy" /></figure>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">06</span><h3>21 kinds of bets, 5 card styles</h3><p>Instead of a new card for every bet type, every bet fits one of five styles: a filling bar, a few small bars, a bar from the centre, a race, or no bar at all.</p></div>
+                <figure class="process__shot"><img src="images/btp-8-card-styles.jpg" alt="The five card styles side by side" loading="lazy" /></figure>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">07</span><h3>Make the score stand out</h3><p>The live number is what you look for, so it's bold and the target steps back. The same chips, notices and cards now live in our design system, ready for every product.</p></div>
+                <figure class="process__shot"><img src="images/btp-9-score.jpg" alt="Latest chips, notices and bet card with a bold live score" loading="lazy" /></figure>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">08</span><h3>Today, in the live demo</h3><p>The same card and chips running over a live basketball game: your bet, how far it has to go, and cash-out, without leaving the match.</p></div>
+                <figure class="process__shot"><img src="images/bt-latest.jpg" alt="Latest build: bet card and chips over a live basketball court" loading="lazy" /></figure>
+              </li>
+            </ol>
+            <p class="fold__learn"><span>What I learned</span>Building it in the real product meant I could watch it move over a live game. Almost every decision came from seeing the previous version not quite work.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="chapter section" id="halftime">
+      <div class="container">
+        <header class="chapter__head reveal">
+          <span class="eyebrow">Chapter 2 — Proposal</span>
+          <h2 class="section__title">Halftime: nine ideas down to <em>one</em></h2>
+          <p class="chapter__line">Halftime is 15 minutes where nothing happens on the pitch. The old screen showed tables of stats. I designed one where the pitch tells the story of the first half, and a few facts turn into a ready-made bet.</p>
+        </header>
+        <figure class="case-hero-media case-hero-media--cover chapter__cover reveal">
+          <div class="cover cover--ht" aria-hidden="true">
+            <svg class="cv-pitch" viewBox="0 0 160 104" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <radialGradient id="htA"><stop offset="0" stop-color="#FF7A45" stop-opacity=".75"/><stop offset="1" stop-color="#FF7A45" stop-opacity="0"/></radialGradient>
+                <radialGradient id="htB"><stop offset="0" stop-color="#8FA8FF" stop-opacity=".7"/><stop offset="1" stop-color="#8FA8FF" stop-opacity="0"/></radialGradient>
+              </defs>
+              <g class="cv-heat">
+                <circle cx="118" cy="40" r="26" fill="url(#htA)"/><circle cx="132" cy="64" r="18" fill="url(#htA)"/><circle cx="96" cy="58" r="16" fill="url(#htA)"/>
+                <circle cx="38" cy="50" r="22" fill="url(#htB)"/><circle cx="58" cy="30" r="14" fill="url(#htB)"/>
+              </g>
+              <g class="cv-lines" fill="none" stroke="currentColor" stroke-width=".6">
+                <rect x="4" y="4" width="152" height="96" rx="1"/><line x1="80" y1="4" x2="80" y2="100"/><circle cx="80" cy="52" r="12"/>
+                <rect x="4" y="28" width="22" height="48"/><rect x="4" y="40" width="8" height="24"/><rect x="134" y="28" width="22" height="48"/><rect x="148" y="40" width="8" height="24"/>
+                <path d="M26 44a10 10 0 0 1 0 16M134 44a10 10 0 0 0 0 16"/>
+              </g>
+              <g class="cv-shots">
+                <circle cx="138" cy="47" r="2.2" class="on"/><circle cx="128" cy="58" r="2.2"/><circle cx="141" cy="60" r="2.2" class="on"/><circle cx="122" cy="44" r="2.2"/><circle cx="131" cy="38" r="2.2"/><circle cx="20" cy="55" r="2.2"/>
+              </g>
+            </svg>
+            <div class="cv-pill"><i></i>HT · 45:00</div>
+            <div class="cv-combo">
+              <span class="cv-combo__h">3-leg combo <em>2nd half</em></span>
+              <ul><li>Over 1.5 goals <i>1.55</i></li><li>Home 5+ corners <i>1.80</i></li><li>Striker shot on target <i>1.40</i></li></ul>
+              <div class="cv-combo__f"><span>≈ 26%</span><b>3.90</b></div>
+            </div>
+          </div>
+        </figure>
+        <div class="reveal">
+          <div class="facts">
+            <div class="fact"><span>The problem</span><p>At halftime people had a page of numbers and nothing to do with them.</p></div>
+            <div class="fact"><span>What I made</span><p>A halftime screen that shows where the game happened, plus ready-made combined bets.</p></div>
+            <div class="fact"><span>The result</span><p>A clear proposal, now being reviewed with the product team.</p></div>
+          </div>
+        </div>
+        <details class="fold reveal">
+          <summary><span class="fold__label">See how it got there</span><span class="fold__meta">4 steps · about 2 min</span></summary>
+          <div class="fold__body">
+            <ol class="process">
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">01</span><h3>Find out what people want</h3><p>Bookmakers push combined bets, and people trust a strong first half too much. So every fact also shows the other side.</p></div>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">02</span><h3>Go wide: nine directions</h3><p>Nine very different ideas on one page, at three phone sizes. Side by side, the strongest was clear: let the pitch tell the story.</p></div>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">03</span><h3>Remove what the app already does</h3><p>A recording of the real app showed half my screen repeated things one tap away. Out they went.</p></div>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">04</span><h3>Let the pitch do the talking</h3><p>Where each team played and where the shots came from, with a few combined bets underneath. Nothing else.</p></div>
+              </li>
+            </ol>
+            <p class="fold__learn"><span>What I learned</span>The best changes were removals. Each round of feedback made the screen smaller and clearer.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="chapter section" id="basketball">
+      <div class="container">
+        <header class="chapter__head reveal">
+          <span class="eyebrow">Chapter 3 — Shipped</span>
+          <h2 class="section__title">Basketball that feels like <em>basketball</em></h2>
+          <p class="chapter__line">Our animated basketball game was built on top of a football one, and it showed: players moved like footballers. I made it move like real basketball, and wrote down how it should work so the whole team could follow it.</p>
+        </header>
+        <figure class="case-hero-media case-hero-media--cover chapter__cover reveal">
+          <div class="cover cover--court" aria-hidden="true">
+            <div class="cv-court-wrap">
+              <svg class="cv-court" viewBox="0 0 50 47">
+                <g fill="none" stroke="currentColor" stroke-width=".35">
+                  <rect x=".5" y=".5" width="49" height="46"/><rect x="17" y=".5" width="16" height="18.5"/>
+                  <circle cx="25" cy="19" r="6"/><path d="M3 .5V14a23.75 23.75 0 0 0 44 0V.5"/><path d="M19 47a6 6 0 0 1 12 0"/>
+                  <circle cx="25" cy="5.25" r=".9"/><line x1="22" y1="4" x2="28" y2="4"/>
+                </g>
+                <g class="cv-paths" fill="none" stroke-width=".45" stroke-dasharray="1.2 1">
+                  <path d="M5 6C10 10 16 13 21 12"/><path d="M42 24C38 18 34 14 30 12"/><path d="M25 33C24 28 25 24 25 21"/>
+                </g>
+                <g class="cv-off"><circle cx="25" cy="33" r="1.4"/><circle cx="5" cy="6" r="1.4"/><circle cx="42" cy="24" r="1.4"/><circle cx="8" cy="23" r="1.4"/><circle cx="31" cy="9" r="1.4"/></g>
+                <g class="cv-def"><circle cx="25" cy="29" r="1.4"/><circle cx="8" cy="9" r="1.4"/><circle cx="39" cy="21" r="1.4"/><circle cx="11" cy="21" r="1.4"/><circle cx="28" cy="11" r="1.4"/></g>
+                <path class="cv-cam" d="M25 40l-7 9h14z"/>
+              </svg>
+            </div>
+            <div class="cv-legend"><span><i class="o"></i>Offense · 4-out-1-in</span><span><i class="d"></i>Man-to-man</span></div>
+            <div class="cv-gears"><b>walk</b><b>jog</b><b>dribble</b><b class="on">sprint</b></div>
+            <div class="cv-camtag">CAM 2 · glide</div>
+          </div>
+        </figure>
+        <div class="reveal">
+          <div class="facts">
+            <div class="fact"><span>The problem</span><p>Players ran at one speed, like football, and three-pointers were impossible because of a measuring mistake.</p></div>
+            <div class="fact"><span>What I made</span><p>New movement, team spacing, defence, free throws with their own camera, and a short written guide.</p></div>
+            <div class="fact"><span>The result</span><p>The version the whole team uses as the reference.</p></div>
+          </div>
+        </div>
+        <details class="fold reveal">
+          <summary><span class="fold__label">See how it got there</span><span class="fold__meta">4 steps · about 2 min</span></summary>
+          <div class="fold__body">
+            <ol class="process">
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">01</span><h3>Write it down first</h3><p>Lots had been agreed in meetings and never written down. I started with a short guide everyone could check.</p></div>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">02</span><h3>Make the players move like players</h3><p>Walk, jog and sprint instead of one speed. A proper attack, defenders following their man, everyone crashing for rebounds.</p></div>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">03</span><h3>Give free throws their moment</h3><p>Players line up correctly and the camera glides to one of three angles, then back. It never jumps.</p></div>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">04</span><h3>Measure the court once</h3><p>The painted court fooled us three times. I measured every line once and made everything use those numbers.</p></div>
+              </li>
+            </ol>
+            <p class="fold__learn"><span>What I learned</span>Write things down, keep important numbers in one place, and always check the real game, not a screenshot.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="takeaways">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Takeaways</span>
+          <h2 class="section__title">What these three have in <em>common</em></h2>
+        </div>
+        <div class="facts reveal">
+          <div class="fact"><span>Calm first</span><p>Live sports are busy. My job is to add information without adding noise.</p></div>
+          <div class="fact"><span>See it moving</span><p>I build my designs into the real product, because motion and timing don't show up in a static mockup.</p></div>
+          <div class="fact"><span>Cut, then cut again</span><p>Most of my best decisions were taking something away.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">More work</span>
+          <h2 class="section__title">Other projects</h2>
+        </div>
+        <div class="work">
+          <a class="card reveal" href="gas-bomber.html">
+            <div class="card__media">
+              <div class="cover cover--gas" aria-hidden="true">
+                <div class="cv-gas"></div>
+                <div class="cv-fan">
+                  <div class="cv-phone cv-phone--port cv-fan__l"><img src="images/gas-bomber-menu.jpg" alt="" loading="lazy" /></div>
+                  <div class="cv-phone cv-phone--port cv-fan__r"><img src="images/gas-bomber-bean-rain.jpg" alt="" loading="lazy" /></div>
+                  <div class="cv-phone cv-phone--port cv-fan__c"><img src="images/gas-bomber-gameplay.jpg" alt="" loading="lazy" /></div>
+                </div>
+                <div class="cv-mark">Gas<span>Bomber</span></div>
+                <svg class="cv-bean" viewBox="0 0 40 28"><ellipse cx="20" cy="16" rx="17" ry="11" fill="#2b1d33"/><ellipse cx="20" cy="14" rx="17" ry="11" fill="#8a4b2a"/><ellipse cx="13" cy="10" rx="6" ry="3" fill="#fff" opacity=".35"/><path d="M30 6q4-5 7-3" stroke="#2b1d33" stroke-width="2" fill="none"/><circle cx="37.5" cy="3" r="2.2" fill="#ffcf3a"/></svg>
+              </div>
+            </div>
+            <div class="card__row">
+              <div><h3 class="card__title">Gas Bomber</h3><p class="card__tag">Side project · Game design + build</p></div>
+              <span class="card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a class="card reveal" href="companion.html">
+            <div class="card__media">
+              <img src="images/companion-cover.webp" alt="NU companion app screens" loading="lazy" />
+            </div>
+            <div class="card__row">
+              <div><h3 class="card__title">NU companion app</h3><p class="card__tag">Health tech · Mobile · 2022–2024</p></div>
+              <span class="card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="container contact__inner reveal">
+        <span class="eyebrow eyebrow--light">Contact</span>
+        <h2 class="contact__title">Let's bring your<br /><em>vision</em> to life<span class="accent">.</span></h2>
+        <p class="contact__lead">I'm here to help you create something exceptional — together.</p>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="https://calendly.com/jakljevicpetra/30min" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span></a>
+          <a class="btn btn--light" href="https://www.linkedin.com/in/petra-jakljevic" target="_blank" rel="noopener">Find me on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Petra Jakljevič</span>
+      <span class="footer__note">Designed &amp; built in VS Code</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

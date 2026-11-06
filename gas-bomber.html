@@ -44,8 +44,17 @@
 
     </section>
 
-    <figure class="case-hero-media container reveal">
-      <img src="images/gas-bomber-bean-rain.jpg" alt="Gas Bomber: beans falling from the sky during a Bean Rain event" />
+    <figure class="case-hero-media case-hero-media--cover container reveal">
+      <div class="cover cover--gas" aria-hidden="true">
+        <div class="cv-gas"></div>
+        <div class="cv-fan">
+          <div class="cv-phone cv-phone--port cv-fan__l"><img src="images/gas-bomber-menu.jpg" alt="" loading="lazy" /></div>
+          <div class="cv-phone cv-phone--port cv-fan__r"><img src="images/gas-bomber-bean-rain.jpg" alt="" loading="lazy" /></div>
+          <div class="cv-phone cv-phone--port cv-fan__c"><img src="images/gas-bomber-gameplay.jpg" alt="" loading="lazy" /></div>
+        </div>
+        <div class="cv-mark">Gas<span>Bomber</span></div>
+        <svg class="cv-bean" viewBox="0 0 40 28"><ellipse cx="20" cy="16" rx="17" ry="11" fill="#2b1d33"/><ellipse cx="20" cy="14" rx="17" ry="11" fill="#8a4b2a"/><ellipse cx="13" cy="10" rx="6" ry="3" fill="#fff" opacity=".35"/><path d="M30 6q4-5 7-3" stroke="#2b1d33" stroke-width="2" fill="none"/><circle cx="37.5" cy="3" r="2.2" fill="#ffcf3a"/></svg>
+      </div>
     </figure>
 
     <section class="section">
@@ -61,30 +70,30 @@
     <section class="section">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">02 — Design by numbers</span>
-          <h2 class="section__title">Tuned with headless playtests</h2>
+          <span class="eyebrow">02 — Playtesting</span>
+          <h2 class="section__title">Tuned by watching <em>hundreds</em> of rounds</h2>
         </div>
         <div class="services">
           <article class="service reveal">
             <span class="step-num">1</span>
             <h3>No-winner rounds</h3>
-            <p>First test: 41–46% of rounds ended with everyone fainted. A last-to-faint rule and tiny hidden lung differences took it to 0–5%.</p>
+            <p>At first almost half the rounds ended with nobody left standing. Now the last one to faint wins, and that almost never happens.</p>
           </article>
           <article class="service reveal">
             <span class="step-num">2</span>
             <h3>Overpowered matches</h3>
-            <p>Matches decided 60% of rounds. Nerfed from instant knockout to 60% breath, now 15–20%.</p>
+            <p>Matches (which set all the gas on fire) were deciding most rounds. I made them weaker, so now they help but don't decide.</p>
           </article>
           <article class="service reveal">
             <span class="step-num">3</span>
             <h3>Bots with personality</h3>
-            <p>Easy bots hesitate and panic; Hard bots kick beans and light matches the moment you're in gas. Win rates: 63%, 30%, 20%.</p>
+            <p>Easy bots hesitate and panic. Hard bots kick beans at you and light matches the moment you're in gas.</p>
           </article>
         </div>
         <div class="case-gallery case-gallery--grid">
           <figure class="reveal"><img src="images/gas-bomber-menu.jpg" alt="Main menu with character card and map picker" loading="lazy" /><figcaption>Menu: character, map and difficulty, Play pinned at the bottom.</figcaption></figure>
           <figure class="reveal"><img src="images/gas-bomber-gameplay.jpg" alt="Gameplay with drifting gas and the wind arrow" loading="lazy" /><figcaption>Mid-round: smoky gas drifting with the wind.</figcaption></figure>
-          <figure class="reveal"><img src="images/gas-bomber-maps.png" alt="All six maps" loading="lazy" /><figcaption>Six maps, each checked by script for sealed-off pockets.</figcaption></figure>
+          <figure class="reveal"><img src="images/gas-bomber-maps.png" alt="All six maps" loading="lazy" /><figcaption>Six maps, each with its own layout and tricks.</figcaption></figure>
           <figure class="reveal"><img src="images/gas-bomber-characters.png" alt="Character bodies, faces, hats and states" loading="lazy" /><figcaption>Characters, faces, hats and every in-game state.</figcaption></figure>
         </div>
       </div>
@@ -96,7 +105,7 @@
           <span class="eyebrow">03 — What it taught me</span>
           <h2 class="section__title">Game feel is interaction design</h2>
         </div>
-        <p class="case-prose reveal">Every rule was a design decision with a reason behind it: gas that slid around blocks felt like it chased you, so it stopped; a fan that changed the wind broke the promise that wind changes are announced, so it pushes gas instead. The same thinking feeds into my day job.</p>
+        <p class="case-prose reveal">Every rule had a reason. When gas slid around blocks it felt like it was chasing you, so I stopped it. A fan that changed the wind felt unfair, so it pushes gas away instead. Small calls like these are exactly what I do in my day job.</p>
       </div>
     </section>
 
@@ -107,24 +116,25 @@
           <h2 class="section__title">Other projects</h2>
         </div>
         <div class="work">
-          <a class="card reveal" href="bet-tracking.html">
-            <div class="card__media"><img src="images/bt-halfway.jpg" alt="Live match view with a tracked bet" loading="lazy" /></div>
+          <a class="card reveal" href="live-sports.html">
+            <div class="card__media">
+              <div class="cover cover--bet" aria-hidden="true">
+                <div class="cv-glow"></div>
+                <div class="cv-stage"><div class="cv-phone cv-phone--land"><img src="images/bt-latest.jpg" alt="" loading="lazy" /></div></div>
+                <div class="cv-chip cv-chip--a"><span class="cv-ring" style="--p:50"></span><span class="cv-chip__t"><b>Halfway there</b></span><span class="cv-score"><b>10</b>/20</span></div>
+              </div>
+            </div>
             <div class="card__row">
-              <div><h3 class="card__title">Bet tracking</h3><p class="card__tag">Shipped · Design + code · 2026</p></div>
+              <div><h3 class="card__title">Designing for live sports</h3><p class="card__tag">Three projects · Design + build · 2025–26</p></div>
               <span class="card__arrow" aria-hidden="true">→</span>
             </div>
           </a>
-          <a class="card reveal" href="halftime.html">
-            <div class="card__media"><div class="code-cover" aria-hidden="true"><span><i>// halftime.ts</i></span><span>evidence = firstHalf.<b>stats</b>()</span><span>legs = evidence.map(toMarket)</span><span><i>// v1 → v7.6</i></span><span>handOff(<b>combo</b>(legs))</span></div></div>
-            <div class="card__row">
-              <div><h3 class="card__title">Halftime with odds</h3><p class="card__tag">Design proposal · 2026</p></div>
-              <span class="card__arrow" aria-hidden="true">→</span>
+          <a class="card reveal" href="companion.html">
+            <div class="card__media">
+              <img src="images/companion-cover.webp" alt="NU companion app screens" loading="lazy" />
             </div>
-          </a>
-          <a class="card reveal" href="basketball.html">
-            <div class="card__media"><div class="code-cover" aria-hidden="true"><span><i>// court.spec.md</i></span><span>movement: <b>walk · jog · sprint</b></span><span>offense: 4-out-1-in</span><span>free throws: <b>3 camera angles</b></span><span>✓ verified, byte-identical</span></div></div>
             <div class="card__row">
-              <div><h3 class="card__title">Making basketball feel like basketball</h3><p class="card__tag">Shipped · 2026</p></div>
+              <div><h3 class="card__title">NU companion app</h3><p class="card__tag">Health tech · Mobile · 2022–2024</p></div>
               <span class="card__arrow" aria-hidden="true">→</span>
             </div>
           </a>

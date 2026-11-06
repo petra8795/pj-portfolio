@@ -173,3 +173,46 @@ function designLayer(title) {
   addEventListener("resize", () => place(false));
   if (document.fonts) document.fonts.ready.then(() => place(false));
 }
+
+// Work list: a small preview window follows the cursor and plays the
+// matching made-up animation (pointer devices only).
+const peek = document.querySelector(".peek");
+if (peek && finePointer) {
+  const demos = Object.fromEntries([...peek.querySelectorAll(".demo")].map((d) => [d.dataset.demo, d]));
+  const svgs = peek.querySelectorAll("svg");
+  if (reduce) svgs.forEach((s) => s.pauseAnimations && s.pauseAnimations());
+  let x = 0, y = 0, tx = 0, ty = 0, raf = 0, on = false;
+  const loop = () => {
+    x += (tx - x) * (reduce ? 1 : 0.18); y += (ty - y) * (reduce ? 1 : 0.18);
+    peek.style.left = x + "px"; peek.style.top = y + "px";
+    if (on || Math.abs(tx - x) > 0.5) raf = requestAnimationFrame(loop);
+  };
+  document.querySelectorAll(".index__row").forEach((row) => {
+    row.addEventListener("pointerenter", (e) => {
+      Object.values(demos).forEach((d) => d.classList.remove("is-on"));
+      const d = demos[row.dataset.demo]; if (d) d.classList.add("is-on");
+      tx = Math.min(e.clientX + 260, innerWidth - 160); ty = Math.max(110, Math.min(e.clientY, innerHeight - 110));
+      if (!on) { x = tx; y = ty; }
+      on = true; peek.classList.add("is-on");
+      cancelAnimationFrame(raf); raf = requestAnimationFrame(loop);
+    });
+    row.addEventListener("pointermove", (e) => { tx = Math.min(e.clientX + 260, innerWidth - 160); ty = Math.max(110, Math.min(e.clientY, innerHeight - 110)); });
+    row.addEventListener("pointerleave", () => { on = false; peek.classList.remove("is-on"); });
+  });
+}
+
+// Combined case study: highlight the chapter you're reading in the sticky bar
+const chapLinks = document.querySelectorAll(".chapnav a[data-chap]");
+if (chapLinks.length && "IntersectionObserver" in window) {
+  const byId = Object.fromEntries([...chapLinks].map((a) => [a.dataset.chap, a]));
+  const seen = new Map();
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach((e) => seen.set(e.target.id, e.isIntersecting ? e.intersectionRatio : 0));
+    let best = null, top = 0;
+    seen.forEach((r, id) => { if (r > top) { top = r; best = id; } });
+    chapLinks.forEach((a) => a.classList.toggle("is-active", a.dataset.chap === best));
+    const a = best && byId[best], bar = a && a.parentElement;
+    if (bar && bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: a.offsetLeft - 16, behavior: reduce ? "auto" : "smooth" }); // keep the active chip visible on phones
+  }, { threshold: [0, 0.15, 0.3, 0.5], rootMargin: "-120px 0px -40% 0px" });
+  Object.keys(byId).forEach((id) => { const el = document.getElementById(id); if (el) cio.observe(el); });
+}
