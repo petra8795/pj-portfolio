@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gas Bomber — Petra Jakljevič</title>
+<meta name="description" content="Side project: a phone-first arena party game where the bombs are farts and the wind carries the gas." />
+<link rel="stylesheet" href="fonts.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html">Petra Jakljevič</a>
+      <nav class="nav__links" id="menu">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#how">How I work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#recommendations">Recommendations</a>
+        <a class="nav__cta" href="https://calendly.com/jakljevicpetra/30min" target="_blank" rel="noopener">Let's talk</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ CASE HERO ============ -->
+    <section class="hero hero--case container">
+      <a class="backlink reveal" href="index.html#work"><span aria-hidden="true">←</span> All work</a>
+      <span class="eyebrow reveal">Side project — Game design · Build</span>
+      <h1 class="hero__title reveal">Gas Bomber<span class="accent">.</span></h1>
+      <p class="hero__lead reveal">A phone-first arena party game where the bombs are farts. Drop beans, dodge the drifting gas, last one breathing wins. The wind is the twist: every cloud drifts, so you can get caught by your own fart if you run the wrong way.</p>
+      <dl class="case-meta reveal">
+        <div><dt>Type</dt><dd>Side project</dd></div>
+        <div><dt>Year</dt><dd>2026</dd></div>
+        <div><dt>Role</dt><dd>Design + build</dd></div>
+        <div><dt>Built with</dt><dd>HTML canvas, Web Audio, Claude Code</dd></div>
+      </dl>
+
+    </section>
+
+    <figure class="case-hero-media container reveal">
+      <img src="images/gas-bomber-bean-rain.jpg" alt="Gas Bomber: beans falling from the sky during a Bean Rain event" />
+    </figure>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">01 — The idea</span>
+          <h2 class="section__title">Readable chaos on a phone</h2>
+        </div>
+        <p class="case-prose reveal">Classic arena bombing, but the explosion is only half the danger. Each burst leaves a cloud the wind carries across the board; rocks and crates stop it, so you hide behind them. Rounds last about ninety seconds, with a surprise event at 0:45 and a closing gas snake at 1:20 so every round ends.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">02 — Design by numbers</span>
+          <h2 class="section__title">Tuned with headless playtests</h2>
+        </div>
+        <div class="services">
+          <article class="service reveal">
+            <span class="step-num">1</span>
+            <h3>No-winner rounds</h3>
+            <p>First test: 41–46% of rounds ended with everyone fainted. A last-to-faint rule and tiny hidden lung differences took it to 0–5%.</p>
+          </article>
+          <article class="service reveal">
+            <span class="step-num">2</span>
+            <h3>Overpowered matches</h3>
+            <p>Matches decided 60% of rounds. Nerfed from instant knockout to 60% breath, now 15–20%.</p>
+          </article>
+          <article class="service reveal">
+            <span class="step-num">3</span>
+            <h3>Bots with personality</h3>
+            <p>Easy bots hesitate and panic; Hard bots kick beans and light matches the moment you're in gas. Win rates: 63%, 30%, 20%.</p>
+          </article>
+        </div>
+        <div class="case-gallery case-gallery--grid">
+          <figure class="reveal"><img src="images/gas-bomber-menu.jpg" alt="Main menu with character card and map picker" loading="lazy" /><figcaption>Menu: character, map and difficulty, Play pinned at the bottom.</figcaption></figure>
+          <figure class="reveal"><img src="images/gas-bomber-gameplay.jpg" alt="Gameplay with drifting gas and the wind arrow" loading="lazy" /><figcaption>Mid-round: smoky gas drifting with the wind.</figcaption></figure>
+          <figure class="reveal"><img src="images/gas-bomber-maps.png" alt="All six maps" loading="lazy" /><figcaption>Six maps, each checked by script for sealed-off pockets.</figcaption></figure>
+          <figure class="reveal"><img src="images/gas-bomber-characters.png" alt="Character bodies, faces, hats and states" loading="lazy" /><figcaption>Characters, faces, hats and every in-game state.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">03 — What it taught me</span>
+          <h2 class="section__title">Game feel is interaction design</h2>
+        </div>
+        <p class="case-prose reveal">Every rule was a design decision with a reason behind it: gas that slid around blocks felt like it chased you, so it stopped; a fan that changed the wind broke the promise that wind changes are announced, so it pushes gas instead. The same thinking feeds into my day job.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">04 — More work</span>
+          <h2 class="section__title">Other projects</h2>
+        </div>
+        <div class="work">
+          <a class="card reveal" href="bet-tracking.html">
+            <div class="card__media"><img src="images/bt-halfway.jpg" alt="Live match view with a tracked bet" loading="lazy" /></div>
+            <div class="card__row">
+              <div><h3 class="card__title">Bet tracking</h3><p class="card__tag">Shipped · Design + code · 2026</p></div>
+              <span class="card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a class="card reveal" href="halftime.html">
+            <div class="card__media"><div class="code-cover" aria-hidden="true"><span><i>// halftime.ts</i></span><span>evidence = firstHalf.<b>stats</b>()</span><span>legs = evidence.map(toMarket)</span><span><i>// v1 → v7.6</i></span><span>handOff(<b>combo</b>(legs))</span></div></div>
+            <div class="card__row">
+              <div><h3 class="card__title">Halftime with odds</h3><p class="card__tag">Design proposal · 2026</p></div>
+              <span class="card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a class="card reveal" href="basketball.html">
+            <div class="card__media"><div class="code-cover" aria-hidden="true"><span><i>// court.spec.md</i></span><span>movement: <b>walk · jog · sprint</b></span><span>offense: 4-out-1-in</span><span>free throws: <b>3 camera angles</b></span><span>✓ verified, byte-identical</span></div></div>
+            <div class="card__row">
+              <div><h3 class="card__title">Making basketball feel like basketball</h3><p class="card__tag">Shipped · 2026</p></div>
+              <span class="card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="container contact__inner reveal">
+        <span class="eyebrow eyebrow--light">Contact</span>
+        <h2 class="contact__title">Let's bring your<br /><em>vision</em> to life<span class="accent">.</span></h2>
+        <p class="contact__lead">I'm here to help you create something exceptional — together.</p>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="https://calendly.com/jakljevicpetra/30min" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span></a>
+          <a class="btn btn--light" href="https://www.linkedin.com/in/petra-jakljevic" target="_blank" rel="noopener">Find me on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Petra Jakljevič</span>
+      <span class="footer__note">Designed &amp; built in VS Code</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

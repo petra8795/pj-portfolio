@@ -29,7 +29,7 @@
       text: "Made complex health data understandable for people without a science background, and added reasons to come back to the app.",
       href: "companion.html", cta: "Open case study" },
     { id: "waiting", icon: "⏳", kind: "Project", title: "NU waiting room", tag: "Product redesign · 2022–2024",
-      img: "images/waiting-room-cover.png",
+      img: "images/waiting-room-cover.jpg",
       text: "Guided people from buying a test kit to getting their results, so the wait felt clear and trustworthy.",
       href: "waiting-room.html", cta: "Open case study" },
     { id: "correlate", icon: "✉️", kind: "Project", title: "Correlate", tag: "CX · System emails · 2020–2021",
