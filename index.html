@@ -7,6 +7,7 @@
 <meta name="description" content="Portfolio of Petra Jakljevič, a UX/UI designer turning real-world problems into clean, usable products across web, mobile and ecommerce." />
 <link rel="stylesheet" href="fonts.css" />
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="play.css" />
 </head>
 <body>
 
@@ -22,11 +23,43 @@
         <a href="#recommendations">Recommendations</a>
         <a class="nav__cta" href="https://calendly.com/jakljevicpetra/30min" target="_blank" rel="noopener">Let's talk</a>
       </nav>
+      <div class="mode" role="group" aria-label="Site version">
+        <button type="button" class="mode__btn" data-mode="classic" aria-pressed="true">Classic</button>
+        <button type="button" class="mode__btn" data-mode="play" aria-pressed="false"><span aria-hidden="true">💨</span> Play</button>
+      </div>
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span>
       </button>
     </div>
   </header>
+
+  <!-- ============ PLAY MODE (the portfolio as a small 3D island; built by play.js, Three.js loads only when Play is picked) ============ -->
+  <section class="play" id="play" hidden aria-label="Play mode: walk around a 3D island to see the portfolio">
+    <div class="play__hud">
+      <p class="play__title">Petra<span>.</span>island <small>portfolio edition</small></p>
+      <span class="play__pill" id="pScore">Score <b id="pScoreNum">0</b></span>
+      <button type="button" class="play__pill play__found" id="pFound" aria-haspopup="dialog">
+        Boards <b id="pCount">0/7</b><span class="play__pips" id="pPips" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="play__pill" id="pSound" aria-pressed="true">Sound on</button>
+    </div>
+    <div class="play__news" id="pNews" aria-live="polite"></div>
+    <div class="play__stage" id="pStage">
+      <canvas id="pCanvas" role="img" aria-label="A small 3D island. The portfolio stands on billboards around it. Use Boards to see the list without playing."></canvas>
+    </div>
+    <div class="play__pad" id="pPad">
+      <div class="play__zone" id="pZone">
+        <div class="play__stick" id="pStick"><b id="pKnob"></b></div>
+        <span class="play__zhint">Drag here to walk</span>
+      </div>
+      <button type="button" class="play__jump" id="pJump">Jump</button>
+    </div>
+    <p class="play__keys" id="pKeys"><span><kbd>WASD</kbd>/<kbd>↑↓←→</kbd> walk</span><span><kbd>Space</kbd> jump, twice to flip</span><span><kbd>E</kbd> read a board</span><span><kbd>B</kbd> board list</span></p>
+
+    <div class="play__veil" id="pVeil" hidden>
+      <div class="play__card" id="pCard" role="dialog" aria-modal="true" aria-labelledby="pCardTitle" tabindex="-1"></div>
+    </div>
+  </section>
 
   <main>
     <!-- ============ HERO ============ -->
@@ -246,5 +279,6 @@
   </footer>
 
   <script src="main.js"></script>
+  <script src="play.js"></script>
 </body>
 </html>
