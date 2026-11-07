@@ -101,8 +101,13 @@ h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:600;line-height
 .nav__brand{font-family:var(--mono);font-weight:700;color:var(--ink);font-size:14px;letter-spacing:0}
 .nav__brand::before{content:"~/";color:var(--accent)}
 .nav__links{display:flex;align-items:center;gap:26px}
-.nav__links a{font-family:var(--body);font-size:14.5px;color:var(--ink-soft);transition:color .15s ease}
-.nav__links a:hover{color:var(--accent)}
+.nav__links a{font-family:var(--body);font-size:14.5px;color:var(--ink-soft);transition:color .2s ease}
+/* hover: the word brightens and a thin lime line draws in underneath */
+.nav__links a:not(.nav__cta){position:relative}
+.nav__links a:not(.nav__cta)::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--accent);
+  transform:scaleX(0);transform-origin:right;transition:transform .3s var(--ease)}
+.nav__links a:not(.nav__cta):hover,.nav__links a:not(.nav__cta):focus-visible{color:var(--ink)}
+.nav__links a:not(.nav__cta):hover::after,.nav__links a:not(.nav__cta):focus-visible::after{transform:scaleX(1);transform-origin:left}
 .nav__cta{border:1px solid var(--line-strong);color:var(--ink) !important;padding:8px 14px;border-radius:var(--radius-sm);transition:border-color .2s ease,color .2s ease}
 .nav__cta:hover{border-color:var(--accent);color:var(--accent) !important}
 .nav__toggle{display:none;background:none;border:none;cursor:pointer;width:40px;height:40px;
@@ -286,6 +291,7 @@ h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:600;line-height
   }
   .nav__links.open{transform:translateY(0)}
   .nav__links a{width:100%;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .nav__links a::after{display:none}
   .nav__cta{margin-top:12px;width:100%;justify-content:center;text-align:center;border-bottom:1px solid var(--line-strong) !important}
   .nav__toggle{display:flex}
   .hero{padding:72px 24px 72px}

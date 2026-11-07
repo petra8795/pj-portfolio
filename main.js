@@ -49,10 +49,6 @@ function scramble(el, dur = 520) {
   };
   requestAnimationFrame(step);
 }
-if (finePointer) document.querySelectorAll(".nav__links a:not(.nav__cta), .backlink").forEach((a) => {
-  const label = a.childElementCount ? null : a; // only plain-text links
-  if (label) a.addEventListener("mouseenter", () => scramble(label, 380));
-});
 
 // Scroll progress bar
 const bar = document.createElement("div");
