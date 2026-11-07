@@ -216,3 +216,17 @@ if (chapLinks.length && "IntersectionObserver" in window) {
   }, { threshold: [0, 0.15, 0.3, 0.5], rootMargin: "-120px 0px -40% 0px" });
   Object.keys(byId).forEach((id) => { const el = document.getElementById(id); if (el) cio.observe(el); });
 }
+
+// Dodgeline: the promo plays muted in the cover; the button turns sound on and off.
+// With reduced motion it waits for the button instead of autoplaying.
+const promo = document.querySelector(".js-promo");
+const soundBtn = document.querySelector(".js-sound");
+if (promo && soundBtn) {
+  if (reduce) { promo.removeAttribute("autoplay"); promo.pause(); soundBtn.textContent = "Play with sound"; }
+  soundBtn.addEventListener("click", () => {
+    promo.muted = !promo.muted;
+    if (!promo.muted) promo.play();
+    soundBtn.textContent = promo.muted ? "Sound on" : "Sound off";
+    soundBtn.setAttribute("aria-label", promo.muted ? "Turn the promo video's sound on" : "Turn the promo video's sound off");
+  });
+}

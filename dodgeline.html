@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dodgeline — Petra Jakljevič</title>
+<meta name="description" content="Side project: Dodgeline, a one-thumb arcade game for iPhone, from concept to a play-ready build in two days." />
+<link rel="stylesheet" href="fonts.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html">Petra Jakljevič</a>
+      <nav class="nav__links" id="menu">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#how">How I work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#recommendations">Recommendations</a>
+        <a class="nav__cta" href="https://calendly.com/jakljevicpetra/30min" target="_blank" rel="noopener">Let's talk</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ CASE HERO ============ -->
+    <section class="hero hero--case container">
+      <a class="backlink reveal" href="index.html#work"><span aria-hidden="true">←</span> All work</a>
+      <span class="eyebrow reveal">Side project — iPhone game · 2026</span>
+      <h1 class="hero__title reveal">Dodgeline<span class="accent">.</span></h1>
+      <p class="hero__lead reveal">A one-thumb arcade game for iPhone. Your block rides one wall of a falling corridor; tap to dash to the other wall and dodge what's coming. I took it from concept to a play-ready build in two days: game design, UX/UI, visuals, sound and playtesting.</p>
+
+      <dl class="case-meta reveal">
+        <div><dt>My part</dt><dd>Game design, UX/UI, sound, playtesting</dd></div>
+        <div><dt>Platform</dt><dd>iPhone · SwiftUI + SpriteKit</dd></div>
+        <div><dt>Timeline</dt><dd>2 days, concept to play-ready</dd></div>
+        <div><dt>Status</dt><dd>Play-ready on device, App Store next</dd></div>
+        <div><dt>Website</dt><dd><a href="https://petra8795.github.io/dodgeline/" target="_blank" rel="noopener">petra8795.github.io/dodgeline</a></dd></div>
+      </dl>
+      <p class="case-note reveal">Built with Claude Code as my pair-programmer. I made every design decision. All graphics, music, sounds and the icon are generated in code.</p>
+    </section>
+
+    <figure class="case-hero-media case-hero-media--cover container reveal">
+      <div class="cover cover--dl" aria-hidden="true">
+        <div class="cv-fan">
+          <div class="cv-phone cv-phone--port cv-fan__l"><img src="images/dl-play-2.jpg" alt="" loading="lazy" /></div>
+          <div class="cv-phone cv-phone--port cv-fan__r"><img src="images/dl-play-3.jpg" alt="" loading="lazy" /></div>
+          <div class="cv-phone cv-phone--port cv-fan__c"><video class="js-promo" src="images/dl-promo.mp4" poster="images/dl-promo-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+        </div>
+        <div class="cv-mark">Dodge<span>line</span></div>
+      </div>
+      <button class="cv-sound js-sound" type="button" aria-label="Play the promo video with sound">Sound on</button>
+    </figure>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal">
+          <div class="facts">
+            <div class="fact"><span>The problem</span><p>One-tap games live or die on feel. The mechanic fits in one sentence, so readability, fairness and pacing have to carry everything. And the genre is crowded and full of ads.</p></div>
+            <div class="fact"><span>What I made</span><p>A fast, fair arcade game: close calls, Overdrive, blocks that land on the beat, an endless mode and 50 hand-made levels. No ads, no tracking.</p></div>
+            <div class="fact"><span>The result</span><p>A play-ready iPhone build in two days. An autopilot clears all 50 levels with zero unfair gaps. App Store submission is next.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">01 — How it came together</span>
+          <h2 class="section__title">From one tap to a <em>finished</em> game</h2>
+        </div>
+        <ol class="process">
+          <li class="process__step reveal">
+            <div class="process__text"><span class="process__num">01</span><h3>One thumb, two walls</h3><p>Tap to dash to the other wall. Dash at the last moment for a close call, which raises your multiplier up to ×5. Chain enough and you hit Overdrive: a few seconds to smash through everything.</p></div>
+            <figure class="process__shot process__shot--tall"><img src="images/dl-store-close.jpg" alt="Store screenshot: Dash late. Score big." loading="lazy" /></figure>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text"><span class="process__num">02</span><h3>Research before polish</h3><p>A 33-page competitor analysis of 18 games, plus research on pacing, mystery-box UX and level design. Two findings shaped everything: 39% of angry reviews were about ads, and the best-loved games are fair and built around music.</p></div>
+            <div class="process__pair">
+              <figure><img src="images/dl-report-cover.jpg" alt="Competitor analysis cover" loading="lazy" /></figure>
+              <figure><img src="images/dl-report-summary.jpg" alt="Competitor analysis summary page" loading="lazy" /></figure>
+            </div>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text"><span class="process__num">03</span><h3>Readable at a glance</h3><p>I tried 2.5D, glass and neon-outline blocks. They looked richer in a still frame but were harder to read in motion, so the final blocks are flat and solid, with an edge that glows hotter each zone. Lasers took four rounds: the final one starts as a spark in the centre and stretches to one wall.</p></div>
+            <figure class="process__shot"><img src="images/dl-blocks.jpg" alt="Block style explorations, from flat to 2.5D" loading="lazy" /></figure>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text"><span class="process__num">04</span><h3>Fairness is a rule, not a feeling</h3><p>Every row leaves a guaranteed gap with time to react. A new player's first runs ramp up more slowly. Pacing follows time played, not score, with a short breather after each new zone. An autopilot plays all 50 levels and flags anything unfair.</p></div>
+            <figure class="process__shot process__shot--tall"><img src="images/dl-store-zones.jpg" alt="Store screenshot: New zones. New rules." loading="lazy" /></figure>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text"><span class="process__num">05</span><h3>Make it feel physical</h3><p>A playtester asked for blocks on the beat. Now the music is generated live, speeds up with the game, and every block reaches you on the beat while the phone taps along. Overdrive got the opposite treatment: I pushed it as far as it would go, then toned it down when it hid your own block.</p></div>
+            <figure class="process__shot process__shot--tall"><img src="images/dl-store-overdrive.jpg" alt="Store screenshot: Charge up. Smash it all." loading="lazy" /></figure>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text"><span class="process__num">06</span><h3>Levels that are designed, not generated</h3><p>The first levels only got longer. I rebuilt them from hand-made patterns, and every world follows the same arc: introduce an idea, practise it, twist it, then a finale. Each level has its own goals and its own song.</p></div>
+            <div class="process__pair">
+              <figure><img src="images/dl-store-levels.jpg" alt="Store screenshot: 50 levels. 5 worlds." loading="lazy" /></figure>
+              <figure><img src="images/dl-store-goals.jpg" alt="Store screenshot: New ideas. Every level." loading="lazy" /></figure>
+            </div>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text"><span class="process__num">07</span><h3>Rewards people understand</h3><p>A tester picked up a mystery box and thought it was a shield. After researching how endless runners handle this, I split boxes into two clear promises: gold for a helpful effect, purple for a wild one worth double points. A reveal badge and a countdown ring show what you got and how long it lasts.</p></div>
+            <figure class="process__shot process__shot--tall"><img src="images/dl-store-mystery.jpg" alt="Store screenshot: Open the mystery box" loading="lazy" /></figure>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text"><span class="process__num">08</span><h3>Fair to the wallet too</h3><p>No ads and no tracking. Five lives that refill for free, five free unlimited minutes a day when you run out, and one optional purchase for unlimited play, more worlds and extra themes.</p></div>
+            <figure class="process__shot process__shot--tall"><img src="images/dl-store-noads.jpg" alt="Store screenshot: No ads. No tracking." loading="lazy" /></figure>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text"><span class="process__num">09</span><h3>Cut what doesn't earn its place</h3><p>I built a 3D tilted view, iterated on it, and removed it: it felt slower and added no new decisions. The difficulty picker went too, because one fair leaderboard is part of the appeal.</p></div>
+          </li>
+          <li class="process__step reveal">
+            <div class="process__text"><span class="process__num">10</span><h3>A name and a face</h3><p>The working title, Flipline, clashed with an existing developer, so it became Dodgeline, which says what you do. Ten icon concepts, checked on a real home screen. Spark Dash won.</p></div>
+            <figure class="process__shot"><img src="images/dl-icons.jpg" alt="Ten app icon concepts" loading="lazy" /></figure>
+          </li>
+        </ol>
+        <p class="fold__learn reveal"><span>What I learned</span>Feel lives in small numbers: a dash of 0.18 seconds felt floaty, and 0.1 felt right. And a striking idea isn't worth keeping if it makes the core loop worse. Every round of playtest feedback became a concrete change.</p>
+      </div>
+    </section>
+
+    <!-- ============ OTHER PROJECTS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">02 — More work</span>
+          <h2 class="section__title">Other projects</h2>
+        </div>
+        <div class="work">
+          <a class="card reveal" href="live-sports.html">
+            <div class="card__media">
+              <div class="cover cover--bet" aria-hidden="true">
+                <div class="cv-glow"></div>
+                <div class="cv-stage"><div class="cv-phone cv-phone--land"><img src="images/bt-latest.jpg" alt="" loading="lazy" /></div></div>
+                <div class="cv-chip cv-chip--a"><span class="cv-ring" style="--p:50"></span><span class="cv-chip__t"><b>Halfway there</b></span><span class="cv-score"><b>10</b>/20</span></div>
+              </div>
+            </div>
+            <div class="card__row">
+              <div><h3 class="card__title">Designing for live sports</h3><p class="card__tag">Three projects · Design + build · 2025–26</p></div>
+              <span class="card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a class="card reveal" href="companion.html">
+            <div class="card__media">
+              <img src="images/companion-cover.webp" alt="NU companion app screens" loading="lazy" />
+            </div>
+            <div class="card__row">
+              <div><h3 class="card__title">NU companion app</h3><p class="card__tag">Health tech · Mobile · 2022–2024</p></div>
+              <span class="card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="container contact__inner reveal">
+        <span class="eyebrow eyebrow--light">Contact</span>
+        <h2 class="contact__title">Let's bring your<br /><em>vision</em> to life<span class="accent">.</span></h2>
+        <p class="contact__lead">I'm here to help you create something exceptional — together.</p>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="https://calendly.com/jakljevicpetra/30min" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span></a>
+          <a class="btn btn--light" href="https://www.linkedin.com/in/petra-jakljevic" target="_blank" rel="noopener">Find me on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Petra Jakljevič</span>
+      <span class="footer__note">Designed &amp; built in VS Code</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
