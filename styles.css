@@ -575,44 +575,56 @@ h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:600;line-height
 .demo.is-on{display:flex}
 .demo svg{width:82%;height:auto}
 
-/* bet: three chips, the middle one fills up and flashes green */
-.demo--bet{flex-direction:column;gap:10px;background:radial-gradient(80% 80% at 50% 100%, rgba(198,244,50,.10), transparent 70%)}
-.d-chip{display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-  font:500 13px/1 var(--body);color:var(--ink);width:150px}
-.d-ring{--p:0;width:20px;height:20px;border-radius:50%;flex:none;background:conic-gradient(var(--accent) calc(var(--p)*1%), rgba(255,255,255,.14) 0);
-  -webkit-mask:radial-gradient(farthest-side, transparent 60%, #000 62%);mask:radial-gradient(farthest-side, transparent 60%, #000 62%)}
+/* live sports: a goal goes in on a drawn pitch and the bet on top fills up and wins */
 @property --p{syntax:"<number>";inherits:false;initial-value:0}
-.d-ring--fill{animation:dFill 3.2s var(--ease) infinite}
-@keyframes dFill{0%{--p:5}70%,100%{--p:100}}
-.d-chip--live{animation:dWin 3.2s ease infinite}
-@keyframes dWin{0%,68%{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}76%{background:rgba(198,244,50,.28);border-color:var(--accent)}100%{background:rgba(198,244,50,.1);border-color:rgba(198,244,50,.4)}}
-
-/* halftime: heat patches grow, shots pop in */
-.d-heat{opacity:0;animation:dHeat 3.6s ease infinite}
-.d-heat--a{fill:#FF7A45;filter:blur(6px)}
-.d-heat--b{fill:var(--design);filter:blur(6px);animation-delay:.4s}
-@keyframes dHeat{0%{opacity:0;transform:scale(.6)}30%,80%{opacity:.55;transform:scale(1)}100%{opacity:0}}
-.demo--ht svg circle.d-heat{transform-box:fill-box;transform-origin:center}
-.d-shot{fill:var(--accent);opacity:0;transform-box:fill-box;transform-origin:center;animation:dShot 3.6s ease infinite 1s}
-@keyframes dShot{0%{opacity:0;transform:scale(0)}15%,70%{opacity:1;transform:scale(1)}100%{opacity:0}}
-
-/* basketball: players moving along their paths (SVG animateMotion) */
-.demo--court{color:rgba(255,186,120,.55);background:radial-gradient(80% 80% at 50% 0%, rgba(255,140,60,.10), transparent 70%)}
-.d-p{fill:var(--design)}
-.d-p:nth-of-type(odd){fill:#FF7A45}
-
-/* gas bomber: a bean drops and puffs out in a cross */
-.demo--gas{background:#0e1408}
-.d-grid{position:absolute;inset:18px;background:
-  linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px) 0 0/32px 32px,
-  linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px) 0 0/32px 32px}
-.d-bean{position:absolute;left:calc(50% - 13px);top:calc(50% - 9px);width:26px;height:18px;border-radius:50%;background:#8a4b2a;box-shadow:inset -3px -3px 0 rgba(0,0,0,.25);
-  animation:dBean 3s ease-in infinite}
-@keyframes dBean{0%{transform:translateY(-90px);opacity:1}30%{transform:translateY(0)}38%{transform:scale(1.25,.8)}46%,100%{transform:scale(0);opacity:0}}
-.d-puff{position:absolute;left:calc(50% - 22px);top:calc(50% - 22px);width:44px;height:44px;border-radius:50%;
-  background:radial-gradient(circle, rgba(159,209,42,.85), rgba(94,132,16,0) 70%);opacity:0;animation:dPuff 3s ease-out infinite}
-.d-puff--l{--x:-44px;--y:0} .d-puff--r{--x:44px;--y:0} .d-puff--u{--x:0;--y:-44px} .d-puff--d{--x:0;--y:44px} .d-puff--c{--x:0;--y:0}
-@keyframes dPuff{0%,40%{opacity:0;transform:translate(0,0) scale(.3)}55%{opacity:1;transform:translate(var(--x),var(--y)) scale(1)}100%{opacity:0;transform:translate(calc(var(--x) + 30px),var(--y)) scale(1.4)}}
+.demo--bet{color:rgba(255,255,255,.2);background:radial-gradient(90% 80% at 50% 50%, rgba(90,190,100,.14), transparent 75%)}
+.demo--bet .d-pitch{width:86%}
+.d-ball{position:absolute;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:#fff;box-shadow:0 0 8px rgba(255,255,255,.6);
+  animation:dBall 4s var(--ease) infinite}
+@keyframes dBall{0%{left:46%;top:58%;opacity:0}6%{opacity:1}26%{left:64%;top:34%}48%{left:91%;top:49%;opacity:1}56%,100%{left:92%;top:50%;opacity:0}}
+/* confetti bursts out from the centre when the goal goes in, then drifts down */
+.d-confetti{position:absolute;left:50%;top:50%}
+.d-confetti i{position:absolute;left:-3px;top:-1.5px;width:6px;height:3px;border-radius:1px;background:var(--c);opacity:0;animation:dConfetti 4s infinite}
+.d-confetti i.d-cf--dot{width:4px;height:4px;border-radius:50%}
+@keyframes dConfetti{0%,49%{opacity:0;transform:translate(0,0) rotate(0) scale(.4)}
+  51%{opacity:1;animation-timing-function:cubic-bezier(.1,.8,.3,1)}
+  68%{opacity:1;transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(1)}
+  88%{opacity:0;transform:translate(calc(var(--x) * 1.1),calc(var(--y) + 34px)) rotate(calc(var(--r) * 2)) scale(1)}
+  100%{opacity:0}}
+/* GOAL types itself out letter by letter */
+.d-goal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:700 26px/1 var(--mono);letter-spacing:.14em;color:var(--accent);
+  text-shadow:0 0 18px rgba(198,244,50,.45);opacity:0;animation:dGoalShow 4s infinite}
+@keyframes dGoalShow{0%,49%{opacity:0}50%,80%{opacity:1}86%,100%{opacity:0}}
+.d-goal__t{display:inline-block;clip-path:inset(0 100% 0 0);animation:dType 4s infinite}
+@keyframes dType{0%,50%{clip-path:inset(0 100% 0 0);animation-timing-function:steps(4,jump-start)}62%,100%{clip-path:inset(0 0 0 0)}}
+.d-score{position:absolute;left:50%;top:12px;transform:translateX(-50%);display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:6px;background:rgba(8,10,12,.8);
+  font:500 11px/1 var(--mono);color:var(--muted)}
+.d-score i{width:6px;height:6px;border-radius:50%;background:#ff4d4d;animation:dLive 1.2s ease infinite}
+@keyframes dLive{50%{opacity:.3}}
+.d-score b{color:var(--ink);font-weight:600}
+/* the bet chip, built like the real one: progress ring, label, then current/target.
+   When the bet lands, the ring becomes a check and the numbers turn lime. */
+.d-bet{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:7px 14px 7px 8px;
+  border-radius:999px;background:rgba(18,19,21,.94);box-shadow:0 0 0 1px rgba(255,255,255,.06);font:400 14px/1 var(--body);white-space:nowrap;
+  animation:dChipIn .6s var(--ease) .15s backwards}
+/* each time the preview opens, the pill slides up into the window from below its edge */
+@keyframes dChipIn{from{transform:translate(-50%,calc(100% + 20px))}to{transform:translate(-50%,0)}}
+.d-bet__icon{width:20px;height:20px;flex:none;place-items:center}
+.d-bet__icon > *{display:block}
+.d-ring{--p:80;width:20px;height:20px;border-radius:50%;background:conic-gradient(rgba(255,255,255,.85) calc(var(--p)*1%), rgba(255,255,255,.16) 0);
+  -webkit-mask:radial-gradient(farthest-side, transparent 72%, #000 75%);mask:radial-gradient(farthest-side, transparent 72%, #000 75%)}
+.demo .d-check{width:20px;height:20px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.d-bet__l{color:var(--muted);margin-right:8px}
+.d-bet__v{color:var(--ink);font-variant-numeric:tabular-nums;animation:dWinInk 4s infinite}
+.d-bet__v b{font-weight:700}
+@keyframes dWinInk{0%,49%{color:var(--ink)}53%,96%{color:var(--accent)}100%{color:var(--ink)}}
+/* two values share one spot and swap when the goal goes in */
+.d-swap{display:inline-grid;justify-items:end}
+.d-swap > *{grid-area:1/1}
+.d-s1,.d-n1{animation:dSwapOut 4s infinite}
+.d-s2,.d-n2{opacity:0;animation:dSwapIn 4s infinite}
+@keyframes dSwapOut{0%,49%{opacity:1}53%,96%{opacity:0}100%{opacity:1}}
+@keyframes dSwapIn{0%,49%{opacity:0}53%,96%{opacity:1}100%{opacity:0}}
 
 /* NU: a result slides into the healthy range */
 .demo--nu{flex-direction:column;gap:14px;padding:0 34px;align-items:stretch}
@@ -628,7 +640,7 @@ h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:600;line-height
 
 @media (prefers-reduced-motion:reduce){
   .demo *,.demo{animation:none !important}
-  .d-ring--fill{--p:100} .d-heat{opacity:.5} .d-shot,.d-verdict{opacity:1} .d-dot{left:52%} .d-bean{display:none} .d-puff{opacity:.7;transform:translate(var(--x),var(--y))}
+  .d-ball,.d-goal,.d-s1,.d-n1{opacity:0} .d-confetti{display:none} .d-s2,.d-n2{opacity:1} .d-bet__v{color:var(--accent)} .d-verdict{opacity:1} .d-dot{left:52%}
   .peek{transition:opacity .2s ease}
 }
 @media (max-width:680px){
