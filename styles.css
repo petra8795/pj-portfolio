@@ -729,3 +729,28 @@ h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:600;line-height
 .cv-fan__l{transform:translateX(-132%) translateY(6cqh) scale(.86);opacity:.85}
 .cv-fan__r{transform:translateX(32%) translateY(6cqh) scale(.86);opacity:.85}
 @media (prefers-reduced-motion:reduce){ .card:hover .cover--bet .cv-phone--land{transform:translate(-50%,-50%)} }
+
+/* ===== Dodgeline ===== */
+.cover--dl{background:radial-gradient(120% 100% at 50% 100%, #2a1240 0%, #120a1e 55%, #08060c 100%)}
+.cover--dl .cv-mark span{color:#3ee6e6}
+.process .process__shot--tall img{width:auto;max-width:100%;max-height:540px;margin:0 auto}
+.process .process__shot--tall{justify-self:center}
+.process__pair img{max-height:600px;object-fit:contain}
+/* work-list preview: a block dashing between two walls */
+.demo--dl{background:radial-gradient(80% 80% at 50% 100%, rgba(62,230,230,.12), transparent 70%)}
+.d-lane{position:relative;width:120px;height:170px;overflow:hidden}
+.d-wall{position:absolute;top:0;bottom:0;width:2px;background:rgba(255,255,255,.28)}
+.d-wall--l{left:0}.d-wall--r{right:0}
+.d-cube{position:absolute;bottom:22px;left:4px;width:16px;height:16px;border-radius:4px;background:#3ee6e6;box-shadow:0 0 12px rgba(62,230,230,.6);animation:dDash 2.4s cubic-bezier(.2,.8,.2,1) infinite}
+.d-blk{position:absolute;top:0;width:56px;height:12px;border-radius:3px;background:#ff3d9a;opacity:0;animation:dFall 2.4s linear infinite}
+.d-blk--a{left:3px}
+.d-blk--b{right:3px;animation-delay:1.2s}
+.d-close{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);font:700 11px/1 var(--mono);letter-spacing:.06em;color:#ffd23f;opacity:0;animation:dClose 2.4s infinite}
+@keyframes dDash{0%,42%{left:4px}48%,90%{left:calc(100% - 20px)}96%,100%{left:4px}}
+@keyframes dFall{0%{transform:translateY(-20px);opacity:0}6%{opacity:1}46%{transform:translateY(128px)}66%{transform:translateY(190px);opacity:1}67%,100%{opacity:0}}
+@keyframes dClose{0%,44%{opacity:0}48%,64%{opacity:1}72%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){ .d-cube{left:auto;right:4px} .d-blk--a{opacity:1;transform:translateY(118px)} .d-close{opacity:1} }
+/* promo video in the centre phone, with a sound toggle */
+.cv-phone video{width:100%;height:100%;object-fit:cover;border-radius:2.4cqmin;display:block;background:#120a1e}
+.cv-sound{position:absolute;right:16px;bottom:16px;z-index:3;font:600 12px/1 var(--mono);letter-spacing:.04em;padding:10px 14px;border-radius:999px;background:rgba(8,6,12,.7);color:#fff;border:1px solid rgba(255,255,255,.22);cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:border-color .2s,color .2s}
+.cv-sound:hover,.cv-sound:focus-visible{border-color:var(--accent);color:var(--accent)}
