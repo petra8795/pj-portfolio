@@ -766,3 +766,5 @@ h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:600;line-height
   background:#000;border-radius:999px;z-index:2}
 .cv-phone--iphone::before{content:"";position:absolute;left:-1cqh;top:17%;width:.55cqh;height:6%;border-radius:.3cqh;
   background:#5a5d64;box-shadow:0 7.5cqh 0 #5a5d64,0 14cqh 0 #5a5d64,37.3cqh 5cqh 0 #5a5d64}
+/* the cover already closes the hero, so the section right after it needs no divider line */
+.case-hero-media + .section{border-top:0}
