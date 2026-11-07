@@ -754,3 +754,15 @@ h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:600;line-height
 .cv-phone video{width:100%;height:100%;object-fit:cover;border-radius:2.4cqmin;display:block;background:#120a1e}
 .cv-sound{position:absolute;right:16px;bottom:16px;z-index:3;font:600 12px/1 var(--mono);letter-spacing:.04em;padding:10px 14px;border-radius:999px;background:rgba(8,6,12,.7);color:#fff;border:1px solid rgba(255,255,255,.22);cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:border-color .2s,color .2s}
 .cv-sound:hover,.cv-sound:focus-visible{border-color:var(--accent);color:var(--accent)}
+/* Dodgeline phones: a real iPhone (17 Pro shape) so the game shows at its true proportions:
+   titanium edge, black glass, Dynamic Island and side buttons. */
+.cv-phone--iphone{height:78cqh;top:11cqh;aspect-ratio:1320/2868;padding:1.1cqh;border-radius:6.2cqh;
+  border:.5cqh solid transparent;
+  background:linear-gradient(#050506,#050506) padding-box,
+    linear-gradient(140deg,#e4e6eb 0%,#6b6e75 28%,#c9ccd3 55%,#46494f 80%,#a9acb3 100%) border-box;
+  box-shadow:0 4cqh 10cqh rgba(0,0,0,.65),0 0 12cqh rgba(62,230,230,.10)}
+.cv-phone--iphone img,.cv-phone--iphone video{border-radius:4.7cqh}
+.cv-phone--iphone::after{content:"";position:absolute;left:50%;top:2.1cqh;width:31%;height:3cqh;transform:translateX(-50%);
+  background:#000;border-radius:999px;z-index:2}
+.cv-phone--iphone::before{content:"";position:absolute;left:-1cqh;top:17%;width:.55cqh;height:6%;border-radius:.3cqh;
+  background:#5a5d64;box-shadow:0 7.5cqh 0 #5a5d64,0 14cqh 0 #5a5d64,37.3cqh 5cqh 0 #5a5d64}
