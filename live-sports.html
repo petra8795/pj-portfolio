@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Live sports — Petra Jakljevič</title>
-<meta name="description" content="Case study: three projects from a year of designing and building live sports apps: bet tracking, halftime and basketball." />
+<meta name="description" content="Case study: three projects from a year of designing and building live sports apps: bet tracking, halftime and 2.5D football." />
 <link rel="stylesheet" href="fonts.css" />
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -39,7 +39,7 @@
         <div><dt>My part</dt><dd>Design + build</dd></div>
         <div><dt>Reading time</dt><dd>2 min skim · 8 min full</dd></div>
       </dl>
-      <p class="case-note reveal">Some details are left out because this is internal work. Team and player names in screenshots are test data.</p>
+      <p class="case-note reveal">Some details are left out because this is internal work. Some player names in screenshots are blurred.</p>
     </section>
 
     <!-- The 2-minute version: one line per project, each a jump link -->
@@ -48,7 +48,7 @@
       <ol class="skim__list">
         <li><a href="#bet"><span class="skim__n">01</span><span class="skim__t">Bet tracking</span><span class="skim__s">Shipped</span><span class="skim__d">Showing people how their bets are doing, right on top of the live game. Now part of our design system.</span></a></li>
         <li><a href="#halftime"><span class="skim__n">02</span><span class="skim__t">Halftime with odds</span><span class="skim__s">Proposal</span><span class="skim__d">Turning the 15-minute break into a quick recap and a ready-made bet. Nine ideas down to one.</span></a></li>
-        <li><a href="#basketball"><span class="skim__n">03</span><span class="skim__t">Basketball that feels like basketball</span><span class="skim__s">Shipped</span><span class="skim__d">Fixing a basketball game that moved like football, and writing down how it should work.</span></a></li>
+        <li><a href="#pitch"><span class="skim__n">03</span><span class="skim__t">Football, from flat to 2.5D</span><span class="skim__s">In the demo</span><span class="skim__d">Turning a flat pitch with dots into a tilted match you can still read on a phone.</span></a></li>
       </ol>
       <p class="skim__hint">Each chapter starts with the short version. Open "See how it got there" for the full process.</p>
     </section>
@@ -58,7 +58,7 @@
       <div class="container chapnav__inner">
         <a href="#bet" data-chap="bet"><span>01</span> Bet tracking</a>
         <a href="#halftime" data-chap="halftime"><span>02</span> Halftime</a>
-        <a href="#basketball" data-chap="basketball"><span>03</span> Basketball</a>
+        <a href="#pitch" data-chap="pitch"><span>03</span> 2.5D pitch</a>
         <a href="#takeaways" data-chap="takeaways"><span>→</span> Takeaways</a>
       </div>
     </nav>
@@ -195,60 +195,55 @@
       </div>
     </section>
 
-    <section class="chapter section" id="basketball">
+    <section class="chapter section" id="pitch">
       <div class="container">
         <header class="chapter__head reveal">
-          <span class="eyebrow">Chapter 3 — Shipped</span>
-          <h2 class="section__title">Basketball that feels like <em>basketball</em></h2>
-          <p class="chapter__line">Our animated basketball game was built on top of a football one, and it showed: players moved like footballers. I made it move like real basketball, and wrote down how it should work so the whole team could follow it.</p>
+          <span class="eyebrow">Chapter 3 — In the demo</span>
+          <h2 class="section__title">Football, from flat to <em>2.5D</em></h2>
+          <p class="chapter__line">Our match tracker showed football as a flat pitch with dots. I designed a tilted 2.5D version where players are little shirts, so it feels closer to watching the game, and it still reads on a small phone.</p>
         </header>
         <figure class="case-hero-media case-hero-media--cover chapter__cover reveal">
-          <div class="cover cover--court" aria-hidden="true">
-            <div class="cv-court-wrap">
-              <svg class="cv-court" viewBox="0 0 50 47">
-                <g fill="none" stroke="currentColor" stroke-width=".35">
-                  <rect x=".5" y=".5" width="49" height="46"/><rect x="17" y=".5" width="16" height="18.5"/>
-                  <circle cx="25" cy="19" r="6"/><path d="M3 .5V14a23.75 23.75 0 0 0 44 0V.5"/><path d="M19 47a6 6 0 0 1 12 0"/>
-                  <circle cx="25" cy="5.25" r=".9"/><line x1="22" y1="4" x2="28" y2="4"/>
-                </g>
-                <g class="cv-paths" fill="none" stroke-width=".45" stroke-dasharray="1.2 1">
-                  <path d="M5 6C10 10 16 13 21 12"/><path d="M42 24C38 18 34 14 30 12"/><path d="M25 33C24 28 25 24 25 21"/>
-                </g>
-                <g class="cv-off"><circle cx="25" cy="33" r="1.4"/><circle cx="5" cy="6" r="1.4"/><circle cx="42" cy="24" r="1.4"/><circle cx="8" cy="23" r="1.4"/><circle cx="31" cy="9" r="1.4"/></g>
-                <g class="cv-def"><circle cx="25" cy="29" r="1.4"/><circle cx="8" cy="9" r="1.4"/><circle cx="39" cy="21" r="1.4"/><circle cx="11" cy="21" r="1.4"/><circle cx="28" cy="11" r="1.4"/></g>
-                <path class="cv-cam" d="M25 40l-7 9h14z"/>
-              </svg>
-            </div>
-            <div class="cv-legend"><span><i class="o"></i>Offense · 4-out-1-in</span><span><i class="d"></i>Man-to-man</span></div>
-            <div class="cv-gears"><b>walk</b><b>jog</b><b>dribble</b><b class="on">sprint</b></div>
-            <div class="cv-camtag">CAM 2 · glide</div>
+          <div class="cover cover--bet cover--pitch" aria-hidden="true">
+            <div class="cv-glow"></div>
+            <div class="cv-stage"><div class="cv-phone cv-phone--land"><img src="images/s25-latest.jpg" alt="" loading="lazy" /></div></div>
           </div>
         </figure>
         <div class="reveal">
           <div class="facts">
-            <div class="fact"><span>The problem</span><p>Players ran at one speed, like football, and three-pointers were impossible because of a measuring mistake.</p></div>
-            <div class="fact"><span>What I made</span><p>New movement, team spacing, defence, free throws with their own camera, and a short written guide.</p></div>
-            <div class="fact"><span>The result</span><p>The version the whole team uses as the reference.</p></div>
+            <div class="fact"><span>The problem</span><p>A flat pitch with dots is clear, but it looks like a diagram, not a match. And once you tilt it, players overlap and get hard to follow.</p></div>
+            <div class="fact"><span>What I made</span><p>A tilted pitch inside a stadium, players as shirts in team colours, the player on the ball bigger, and every match moment drawn out.</p></div>
+            <div class="fact"><span>The result</span><p>Handed over to developers and running in our demo. The flat version stays as a lighter option.</p></div>
           </div>
         </div>
         <details class="fold reveal">
-          <summary><span class="fold__label">See how it got there</span><span class="fold__meta">4 steps · about 2 min</span></summary>
+          <summary><span class="fold__label">See how it got there</span><span class="fold__meta">5 steps · about 2 min</span></summary>
           <div class="fold__body">
             <ol class="process">
               <li class="process__step">
-                <div class="process__text"><span class="process__num">01</span><h3>Write it down first</h3><p>Lots had been agreed in meetings and never written down. I started with a short guide everyone could check.</p></div>
+                <div class="process__text"><span class="process__num">01</span><h3>Start from the flat pitch</h3><p>Top-down, with a dot for each player. Easy to read, but it doesn't feel like football.</p></div>
+                <figure class="process__shot"><img src="images/s25-1-flat.jpg" alt="Flat top-down pitch with dots for players" loading="lazy" /></figure>
               </li>
               <li class="process__step">
-                <div class="process__text"><span class="process__num">02</span><h3>Make the players move like players</h3><p>Walk, jog and sprint instead of one speed. A proper attack, defenders following their man, everyone crashing for rebounds.</p></div>
+                <div class="process__text"><span class="process__num">02</span><h3>Tilt it</h3><p>The same pitch in perspective, with a stadium around it. Every flow came along: possession, free kicks, goals and the timeout screen.</p></div>
+                <figure class="process__shot"><img src="images/s25-2-tilted.jpg" alt="Tilted pitch with a stadium and round players" loading="lazy" /></figure>
               </li>
               <li class="process__step">
-                <div class="process__text"><span class="process__num">03</span><h3>Give free throws their moment</h3><p>Players line up correctly and the camera glides to one of three angles, then back. It never jumps.</p></div>
+                <div class="process__text"><span class="process__num">03</span><h3>Make the ball easy to find</h3><p>Tilted, players overlap and it's hard to see who has the ball. So the player on the ball gets bigger.</p></div>
+                <div class="process__pair">
+                  <figure><img src="images/s25-3-before.jpg" alt="Tilted pitch, every player the same size" loading="lazy" /><figcaption class="is-before">Before</figcaption></figure>
+                  <figure><img src="images/s25-3-after.jpg" alt="Tilted pitch, the player on the ball is bigger" loading="lazy" /><figcaption class="is-after">After</figcaption></figure>
+                </div>
               </li>
               <li class="process__step">
-                <div class="process__text"><span class="process__num">04</span><h3>Measure the court once</h3><p>The painted court fooled us three times. I measured every line once and made everything use those numbers.</p></div>
+                <div class="process__text"><span class="process__num">04</span><h3>Shirts instead of dots, at every size</h3><p>Shirts in team colours make the teams easy to tell apart. I checked them at three widths, from a small widget to a big one.</p></div>
+                <figure class="process__shot"><img src="images/s25-4-sizes.jpg" alt="The shirt version at 280, 390 and 600 pixels wide" loading="lazy" /></figure>
+              </li>
+              <li class="process__step">
+                <div class="process__text"><span class="process__num">05</span><h3>Draw every moment</h3><p>Goals, corners, free kicks, cards, substitutions, VAR, injuries. Each one drawn frame by frame, so developers know exactly what happens on the pitch.</p></div>
+                <figure class="process__shot"><img src="images/s25-latest.jpg" alt="Final 2.5D design with shirts on a tilted pitch" loading="lazy" /></figure>
               </li>
             </ol>
-            <p class="fold__learn"><span>What I learned</span>Write things down, keep important numbers in one place, and always check the real game, not a screenshot.</p>
+            <p class="fold__learn"><span>What I learned</span>Tilting the pitch was the easy part. The real work was keeping it readable: who has the ball, which team is which, on a screen the size of your palm.</p>
           </div>
         </details>
       </div>
